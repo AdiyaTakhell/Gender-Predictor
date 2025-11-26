@@ -1,0 +1,175 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+/* Reset and base settings */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Color palette + reusable variables */
+:root {
+    --bg: #F7E7CE;
+    --primary: #A3CEF1;
+    --secondary: #EAD7D7;
+    --card: #BFD8BD;
+    --text: #2D2D2D;
+
+    --radius: 10px;
+    --spacing: 1rem;
+}
+
+/* Global page style */
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: "Oswald", sans-serif;
+    line-height: 1.5;
+    font-size: clamp(14px, 2vw, 18px); /* Responsive text scaling */
+}
+
+/* ====================== HEADER & FOOTER ====================== */
+header, footer {
+    text-align: center;
+    padding: var(--spacing);
+}
+
+header h1 {
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    font-size: clamp(1.5rem, 4vw, 2.5rem); /* Responsive heading */
+}
+
+/* ====================== MAIN LAYOUT ====================== */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--spacing);
+}
+
+/* Responsive container width */
+.container {
+    max-width: 500px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+#form-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+}
+
+/* ====================== FORM ====================== */
+#gender-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    align-items: center;
+}
+
+/* Input styling */
+#gender-form input {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: var(--radius);
+    border: 2px solid var(--primary);
+    background-color: #fff;
+    color: var(--text);
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Input focus glow */
+#gender-form input:focus {
+    outline: none;
+    border-color: var(--secondary);
+    box-shadow: 0 0 8px rgba(163, 206, 241, 0.5);
+}
+
+/* Submit Button styling */
+button {
+    background-color: var(--primary);
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Button hover animation */
+button:hover {
+    background-color: var(--secondary);
+    transform: scale(1.05);
+}
+
+/* Button keyboard focus state */
+button:focus {
+    outline: 3px solid var(--secondary);
+    outline-offset: 3px;
+}
+
+/* ====================== RESULT BOX ====================== */
+#result-title {
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 2rem;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+}
+
+/* Display area for predicted result */
+#result {
+    background-color: var(--card);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    margin-top: 1rem;
+    text-align: center;
+    font-size: clamp(1rem, 3vw, 1.3rem);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    transition: opacity 0.3s ease; /* smooth fade effect */
+}
+
+/* ====================== FOOTER ====================== */
+footer {
+    margin-top: 3rem;
+    font-size: clamp(0.6rem, 2vw, 0.9rem);
+    opacity: 0.7;
+}
+
+/* ====================== RESPONSIVE BREAKPOINTS ====================== */
+
+/* Mobile devices */
+@media (max-width: 480px) {
+    main {
+        padding: 0.5rem;
+    }
+
+    button {
+        width: 100%; /* Full-width button */
+    }
+
+    #result {
+        padding: 1rem;
+    }
+}
+
+/* Tablets */
+@media (min-width: 768px) {
+    .container {
+        max-width: 600px;
+    }
+}
+
+/* Large screens / desktop */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 700px;
+    }
+}
